@@ -65,3 +65,44 @@ export function createHostedShareDocInput(
     deleteAfter,
   };
 }
+
+export async function getHostedShares(
+  replica: Earthstar.Replica,
+): Promise<Earthstar.ShareAddress[]> {
+  // Get shares configured by settings.
+  const hostedShares = await Earthstar.queryByTemplate(
+    replica,
+    HOSTED_SHARE_TEMPLATE,
+  );
+
+  const temporarilyHostedShares = await Earthstar.queryByTemplate(
+    replica,
+    TEMPORARY_HOSTED_SHARE_TEMPLATE,
+  );
+
+  const shares: Earthstar.ShareAddress[] = [];
+
+  for (const hostedShareDoc of hostedShares) {
+    const variables = Earthstar.extractTemplateVariablesFromPath(
+      HOSTED_SHARE_TEMPLATE,
+      hostedShareDoc.path,
+    );
+
+    if (variables && variables["shareName"]) {
+      shares.push(variables["shareName"]);
+    }
+  }
+
+  for (const hostedShareDoc of temporarilyHostedShares) {
+    const variables = Earthstar.extractTemplateVariablesFromPath(
+      TEMPORARY_HOSTED_SHARE_TEMPLATE,
+      hostedShareDoc.path,
+    );
+
+    if (variables && variables["shareName"]) {
+      shares.push(variables["shareName"]);
+    }
+  }
+
+  return shares;
+}
