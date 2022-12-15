@@ -51,20 +51,26 @@ Invalid version numbers: `1.0.0`, `2.b`, `latest`.
 A separate file should be used for each version of the schema in this repo, e.g.
 `/schemas/my_schema/1.0.ts`
 
-### Schema contents
+### Schema specification
 
-A valid schema includes exports which assist in _querying_ and _writing_ data
-relevant to the schema to an Earthstar replica. Some examples:
+Because implementations can contain bugs and applications' needs vary, a written
+specification is required.
 
-- Path templates to be used with `Earthstar.queryByTemplate` or
-  `extractTemplateVariablesFromPaths`
-- Globs to be used with `Earthstar.queryByGlob`
-- Helper functions or classes to generate new documents which belong to this
-  schema
-- Helper functions or classes to read and process documents belonging to this
-  schema
+The written specification must be a markdown file with a title with with the
+format `SPEC_{VERSON}.md`.
 
-If the schema is complex, a specification goes a long way.
+The specification MUST detail the schema's namespace and version.
+
+The specification MUST describe the purpose of the schema and how documents
+following its schema should be interpreted.
+
+The specification MUST describe how to author documents conformant with its
+schema, e.g. how paths should be formatted, valid values for fields like `text`.
+
+### Example code
+
+A schema MAY provide a module of functions which assist in the reading and
+writing of schema-conformant documents.
 
 #### Determining minor or major version updates
 
