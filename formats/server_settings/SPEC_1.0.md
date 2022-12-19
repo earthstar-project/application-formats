@@ -1,12 +1,12 @@
-# Server settings schema
+# Server settings format
 
 <dl>
 	<dt>Namespace</dt><dd>`server-settings`</dd>
 	<dt>Version</dt><dd>1.0</dd>
 </dl>
 
-This is a document schema for describing the configuration of an Earthstar
-server's hosted shares.
+This is a document application format for describing the configuration of an
+Earthstar server's hosted shares.
 
 More settings may be added in future versions.
 
@@ -14,8 +14,8 @@ More settings may be added in future versions.
 
 Earthstar peers must know which shares to store and replicate ahead of time.
 
-This schema represents each share for a server to host with a single document. A
-share can also be hosted temporarily by using an ephemeral document.
+This application format represents each share for a server to host with a single
+document. A share can also be hosted temporarily by using an ephemeral document.
 
 ### Hosted share document path
 
