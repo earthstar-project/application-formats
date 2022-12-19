@@ -1,0 +1,61 @@
+# About format
+
+<dl>
+	<dt>Namespace</dt><dd>`about`</dd>
+	<dt>Version</dt><dd>1.0</dd>
+</dl>
+
+This is an application format for describing personal information (e.g. display names, avatars, bios) associated with particular author keypairs.
+
+## Keypair association
+
+Personal information should only be publishable and modifiable by the holder of a specific keypair. 
+
+Therefore, each documents following this format is prefixed with the following:
+
+`/about/1.0/~{KEYPAIR_ADDRESS}`
+
+Where `KEYPAIR_ADDRESS` is the full public address of the keypair associated with this document, e.g. `@suzy.bo5sotcncvkr7p4c3lnexxpb4hjqi5tcxcov5b4irbnnz2teoifua`.
+
+The presence of an author keypair prefixed with a tilde in a path invokes path ownership, and only this keypair will be able to write to these paths.
+
+## Display names
+
+Author keypairs begin with a shortname to make the keypair easier to identify, e.g. `suzy`. These shortnames cannot be changed and are always four characters long. This makes them unsuitable for most names and the fluctuating nature of identity.
+
+Therefore it is desirable to have a free-form display name which can be changed at any time, and which can differ between each share.
+
+### Display name document path
+
+The path format of a display name document is:
+
+```
+`/about/1.0/~{KEYPAIR_ADDRESS}/displayName
+```
+
+### Display name document fields
+
+The `text` property of the document is the display name the keypair's owner wishes to use. It can be any UTF-8 string.
+
+## Avatars
+
+An image can be associated with an author keypair.
+
+### Avatar document path
+
+The path format of a display name document is:
+
+```
+`/about/1.0/~{KEYPAIR_ADDRESS}`/avatar.{IMAGE_EXTENSION}
+```
+
+where `IMAGE_EXTENSION` is either `gif`, `jpg`, or `png`, corresponding to the format of the data used with this document's attachment.
+
+### Avatar document fields
+
+- The `text` property of the document MUST be a textual description of the avatar image's contents, for use with screenreaders etc.
+- The attachment of the document MUST be an image file.
+	- The file size of the image MUST be less than or equal to 500,000 bytes.
+	- The dimensions of the image MUST NOT exceed 512 pixels on either side.
+	- The image SHOULD have a 1:1 aspect ratio.
+
