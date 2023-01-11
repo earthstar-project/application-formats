@@ -72,3 +72,21 @@ attachment data for this document.
     - The image SHOULD NOT be larger than 1,000,000 bytes. These images may be
       presented in interfaces where they are rendered alongside many other
       avatars, and which may impact the performance of rendering.
+
+## Status
+
+A short status message (e.g. "Away from keyboard") can optionally be associated
+with an author keypair.
+
+## Status document path
+
+The path format of a display name document is:
+
+```
+`/about/1.0/~{KEYPAIR_ADDRESS}`/status
+```
+
+## Status document fields
+
+The `text` property of the document is the status message the author wishes to
+associate with their keypair. It can be any UTF-8 string.
