@@ -5,8 +5,8 @@
 	<dt>Version</dt><dd>1.0</dd>
 </dl>
 
-This is a document application format for describing the configuration of an
-Earthstar server's hosted shares.
+This is an application format for describing the configuration of an Earthstar
+server's hosted shares.
 
 More settings may be added in future versions.
 
