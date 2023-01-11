@@ -75,12 +75,12 @@ attachment data for this document.
 
 ## Status
 
-A short status message (e.g. "Away from keyboard") can optionally be associated
-with an author keypair.
+A status message (e.g. "Away from keyboard") can optionally be associated with
+an author keypair.
 
 ## Status document path
 
-The path format of a display name document is:
+The path format of a status document is:
 
 ```
 `/about/1.0/~{KEYPAIR_ADDRESS}`/status
@@ -89,4 +89,23 @@ The path format of a display name document is:
 ## Status document fields
 
 The `text` property of the document is the status message the author wishes to
-associate with their keypair. It can be any UTF-8 string.
+associate with their keypair. It can be any UTF-8 string. The status message
+SHOULD be equal or less to 128 characters.
+
+## Biography
+
+Some biographical information can optionally be associated with an author
+keypair.
+
+## Biography document path
+
+The path format of a biography document is:
+
+```
+`/about/1.0/~{KEYPAIR_ADDRESS}`/bio
+```
+
+## Status document fields
+
+The `text` property of the document is the biography message the author wishes
+to associate with their keypair. It can be any UTF-8 string of any length.
