@@ -16,11 +16,8 @@ centralisation around slow-moving, hard-to-modify monolithic clients.
 
 ## Formats
 
-- **Server settings**. Configure which shares an Earthstar server should host.
-
-## In progress
-
 - **About**. Personal information associated with author keypairs.
+- **Server settings**. Configure which shares an Earthstar server should host.
 
 ## Contributing a format
 
