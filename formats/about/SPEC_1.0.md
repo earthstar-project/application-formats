@@ -39,7 +39,7 @@ at any time, and which can differ between each share.
 The path format of a display name document is:
 
 ```
-`/about/1.0/~{KEYPAIR_ADDRESS}/displayName
+/about/1.0/~{KEYPAIR_ADDRESS}/displayName
 ```
 
 ### Display name document fields
