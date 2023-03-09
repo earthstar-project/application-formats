@@ -38,6 +38,27 @@ The path format is:
 - If the hosted share setting is temporary, the `deleteAfter` field must be the
   timestamp in microseconds for when the share should be hosted until.
 
+### Interpreting hosted documents
+
+Because they have different paths, it is possible for an ephemeral hosted share
+document and non-ephemeral hosted share document to co-exist at the same time:
+
+```
+/server-settings/1.0/shares/babcd/host!
+/server-settings/1.0/shares/babcd/host
+```
+
+The documents may also have different values (e.g. one may be empty and one may
+be defined).
+
+In this scenario we follow OR logic:
+
+- If both documents have an empty text field, the share must not be hosted.
+- If either document has the share address in its text field, the share must be
+  hosted.
+- If both documents have the share address in their text fields, the share must
+  be hosted.
+
 ## Notes
 
 A hash of the hosted share's address is used in the path so that a setting which
