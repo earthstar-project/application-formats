@@ -63,7 +63,7 @@ CommunalCapability:
 
 This will allow them forever access - but only to capabilities specific to them.
 
-Then you can put the actual week by week capability in there. Each time you make an entry, or regularly on expiry (whichever makes sense for your app), overwrite the entry at that path with a new capability, extending the time. This prevents there being lots of documents, and the first thing they can do on sync is get the latest capability, and then use that to sync all entries in the past.
+Then you can put the actual week by week capability in there. Each time you make an entry, or regularly on expiry (whichever makes sense for your app), overwrite the entry at that path with a new capability, extending the time. This prevents there being lots of documents, and the first thing they can do on sync is get the latest capability, and then use that to sync all entries in the past. This could likely be done by the same client you're using to make the entries - if you aren't making you entries, the existing caps are sufficient. If you make an entry outside of the current end time, you'll want to update them all. Any peer will get the updated caps in the same sync as the new entries, whether that's a direct peer or via some pub/relay.
 
 To stop someone accessing future Entries, stop updating the capability (and optionally tombstone the old one).
 
