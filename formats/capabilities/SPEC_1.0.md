@@ -36,6 +36,8 @@ For such cases instead of publishing these under the pubkey of the receiving ent
 
 You may want one, or many, depending on the application, if you want to coordinate between multiple client devices etc. These are opaque to the receiver, who should decode all documents under the path prefix.
 
+A suggested scheme for this would be using `/1`, `/2` etc. If you're merely extending the lifetime of an existing cap, then you can write to the same path. It doesn't matter if you have two clients that independently do this. If you want to change the contents, you should increment the number, and tombstone older entries. This behaviour doesn't handle the same user making changes to the same receiver's caps concurrently on two devices they own - only one will win.
+
 ## Payload format
 
 These should be encrypted under the pubkey of the receiver of the capability. This prevents anyone from knowing which Namespace/Subspace/Path the capability is for
