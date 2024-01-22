@@ -7,10 +7,6 @@
 
 This is an application format for continuous sharing and minting of capability information
 
-## Namespace
-
-While these entries can live and be interpreted in any Namespace, by convention they should live in the communal Namespace `capabilities.000...`
-
 ## Subspace
 
 Capabilities are by an entity, and are therefore published under the issuing entities subspace.
@@ -55,7 +51,7 @@ The solution is to grant two capabilities, first:
 ```
 CommunalCapability:
   access_mode: read
-  namespace_key: capabilities.000...
+  namespace_key: gardening.xxx...
   user_key: UserPublicKey
   delegations:
   - times: forever
@@ -78,7 +74,7 @@ Grant a capability as follows:
 ```
 CommunalCapability:
   access_mode: read
-  namespace_key: capabilities.000...
+  namespace_key: gardening.xxx...
   user_key: btnaix46fptu7nj4hwhkusutly6vhjgbigi6ewnapykza66ucf24a
   delegations:
   - times: forever
