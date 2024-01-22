@@ -20,7 +20,7 @@ In practice - if you only have the ability to write in one subspace, you'd presu
 
 ## Public capabilities
 
-The knowledge that you've issued capabilities to the receiver will be public for all
+The knowledge that you've issued capabilities to the receiver will be public for all. The contents, however, will be encrypted, so the capabilities / subspaces / paths they've been granted access to will not be public.
 
 `/capabilities/1.0/public/{receiver-pubkey}/{id}`
 
