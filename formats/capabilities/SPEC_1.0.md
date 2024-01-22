@@ -9,7 +9,14 @@ This is an application format for continuous sharing and minting of capability i
 
 ## Subspace
 
-Capabilities are by an entity, and are therefore published under the issuing entities subspace.
+### Communal Namespaces
+
+Capabilities are issued by an entity, and are therefore published under the issuing entities subspace.
+
+### Owned Namespaces
+
+The use of an owned Namespace depends on the owner - so they should set the rules on which subspace to use.
+In practice - if you only have the ability to write in one subspace, you'd presumably publish the capabilities there.
 
 ## Public capabilities
 
